@@ -7,18 +7,15 @@ class User:		# aqui está lo que tenemos hasta ahora
 
     def make_deposit(self, amount):	# toma un argumento que es el monto del depósito
         self.account_balance += amount	# la cuenta del usuario específico aumenta por la cantidad del valor recibido
-        return self
 
     def make_withdrawal (self, amount):
         if (self.account_balance - amount < 0):
             print("You don't have enough money to withdrawal")
         else:
             self.account_balance -= amount
-        return self
 
     def display_user_balance (self):
         print(f"{self.name} has in the savings account {self.account_balance}.")
-        return self
 
     def transfer_money (self, other_user, amount):
         other_user.make_deposit(amount)
